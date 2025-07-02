@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AccessNav Kenya - Navigate with Confidence</title>
+    <meta name="description" content="Empowering persons with disabilities across Kenya's 47 counties to navigate urban and rural environments independently with real-time accessibility data and assistive tools." />
+    
+    <!-- Kenya-specific meta tags -->
+    <meta name="keywords" content="Kenya, disability, accessibility, navigation, NCPWD, assistive technology, inclusive design, Nairobi, Mombasa, Kisumu, Eldoret" />
+    <meta name="theme-color" content="#006600" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="AccessNav Kenya" />
+    
+    <!-- Open Graph tags for social sharing -->
+    <meta property="og:title" content="AccessNav Kenya - Navigate with Confidence" />
+    <meta property="og:description" content="Empowering persons with disabilities across Kenya to navigate independently" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_KE" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Google Maps API -->
+    <script>
+      window.GOOGLE_MAPS_API_KEY = 'AIzaSyCqZT-LAeqkGFHK7Vx9AX1c7r22BpsqFPc';
+    </script>
+  </head>
+  <body>
+    <!-- Main application container -->
+    <div id="root"></div>
+    
+    <!-- Application script -->
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Screen reader announcements -->
+    <div id="announcements" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+    <div id="alerts" aria-live="assertive" aria-atomic="true" class="sr-only"></div>
+    
+    <!-- Loading indicator for slow connections -->
+    <noscript>
+      <div style="text-align: center; padding: 2rem; font-family: system-ui, sans-serif;">
+        <h1>AccessNav Kenya</h1>
+        <p>This application requires JavaScript to function properly.</p>
+        <p>Please enable JavaScript in your browser settings and refresh the page.</p>
+      </div>
+    </noscript>
+  </body>
+</html>

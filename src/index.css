@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Accessibility-focused CSS custom properties and enhancements */
+:root {
+  --focus-ring-color: #3b82f6;
+  --focus-ring-width: 4px;
+  --high-contrast-bg: #000000;
+  --high-contrast-text: #ffffff;
+  --extra-high-contrast-bg: #000000;
+  --extra-high-contrast-text: #ffff00;
+}
+
+/* Theme variations */
+[data-theme="dark"] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(17 24 39 / var(--tw-bg-opacity));
+  color: rgb(243 244 246 / var(--tw-text-opacity));
+}
+
+/* Contrast level adjustments */
+[data-contrast="high"] {
+  --tw-text-opacity: 1;
+  color: var(--high-contrast-text);
+}
+
+[data-contrast="high"] .bg-white {
+  background-color: var(--high-contrast-bg) !important;
+}
+
+[data-contrast="extra-high"] {
+  --tw-text-opacity: 1;
+  color: var(--extra-high-contrast-text) !important;
+}
+
+[data-contrast="extra-high"] .bg-white {
+  background-color: var(--extra-high-contrast-bg) !important;
+}
+
+/* Font size adjustments */
+[data-font-size="small"] {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+[data-font-size="large"] {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+[data-font-size="extra-large"] {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+/* Enhanced focus indicators for accessibility */
+*:focus {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color) !important;
+  outline-offset: 2px !important;
+}
+
+/* High contrast focus indicators */
+[data-contrast="high"] *:focus,
+[data-contrast="extra-high"] *:focus {
+  outline: 4px solid #ffff00 !important;
+  outline-offset: 2px !important;
+}
+
+/* Ensure minimum touch target sizes */
+button, [role="button"], input, select, textarea {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Improve readability */
+body {
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Visually hidden but available to screen readers */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* High contrast mode compatibility */
+@media (prefers-contrast: high) {
+  .bg-white {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .text-gray-600 {
+    color: black !important;
+  }
+  
+  .border-gray-300 {
+    border-color: black !important;
+    border-width: 2px !important;
+  }
+}
+
+/* Large text support */
+@media (min-width: 1px) {
+  [data-font-size="large"] .text-sm {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+  }
+  
+  [data-font-size="large"] .text-base {
+    font-size: 1.375rem !important;
+    line-height: 1.875rem !important;
+  }
+  
+  [data-font-size="large"] .text-lg {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+  
+  [data-font-size="extra-large"] .text-sm {
+    font-size: 1.125rem !important;
+    line-height: 1.75rem !important;
+  }
+  
+  [data-font-size="extra-large"] .text-base {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+  
+  [data-font-size="extra-large"] .text-lg {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+  }
+}
+
+/* Improved button accessibility */
+button:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.5 !important;
+}
+
+/* Better form field accessibility */
+input:focus, textarea:focus, select:focus {
+  border-width: 3px !important;
+  border-color: var(--focus-ring-color) !important;
+}
+
+/* Ensure sufficient color contrast */
+.text-gray-500 {
+  color: #6b7280;
+}
+
+[data-contrast="high"] .text-gray-500 {
+  color: #374151 !important;
+}
+
+[data-contrast="extra-high"] .text-gray-500 {
+  color: #000000 !important;
+}
+
+/* Loading states */
+.loading-spinner {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Smooth transitions for better UX */
+.smooth-transition {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Focus management for modals and overlays */
+.focus-trap {
+  position: relative;
+}
+
+.focus-trap:focus {
+  outline: none;
+}
+
+/* Improved link styling */
+a:focus {
+  outline: 3px solid var(--focus-ring-color);
+  outline-offset: 2px;
+  text-decoration: underline;
+}
+
+/* Better error and success states */
+.error-state {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+}
+
+.success-state {
+  border-color: #16a34a !important;
+  background-color: #f0fdf4 !important;
+}
+
+/* Responsive text scaling */
+@media (max-width: 640px) {
+  .responsive-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Print styles for accessibility */
+@media print {
+  .sr-only,
+  .visually-hidden {
+    display: none !important;
+  }
+  
+  * {
+    background: white !important;
+    color: black !important;
+  }
+}
