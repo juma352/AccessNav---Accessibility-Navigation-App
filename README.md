@@ -28,7 +28,7 @@ AccessNav Kenya is a comprehensive accessibility platform designed specifically 
 - **NCPWD Partner Integration**: Direct access to government employment programs
 
 #### 🏥 Health & Wellness
-- **NHIF Provider Directory**: Find accredited healthcare providers nationwide
+- **SHIF Provider Directory**: Find accredited healthcare providers nationwide
 - **Medication Management**: Track prescriptions with local availability data
 - **Telehealth Access**: Remote consultations with disability-experienced providers
 - **Wellness Tracking**: Monitor health metrics and accessibility to care
