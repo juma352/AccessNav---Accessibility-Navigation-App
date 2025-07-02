@@ -35,11 +35,11 @@ export const GoogleMap: React.FC<GoogleMapProps> = ({
   useEffect(() => {
     const initMap = async () => {
       try {
-        const loader = new Loader({
-          apiKey: 'AIzaSyCqZT-LAeqkGFHK7Vx9AX1c7r22BpsqFPc',
-          version: 'weekly',
-          libraries: ['places']
-        });
+          const loader = new Loader({
+            apiKey: import.meta.env.VITE_GOOGLE_MAPS_API_KEY,
+            version: 'weekly',
+            libraries: ['places']
+          });
 
         const google = await loader.load();
         
